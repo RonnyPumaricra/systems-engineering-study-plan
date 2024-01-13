@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin') // eslint-disable-line
+const colors = require('tailwindcss/colors') // eslint-disable-line
+
 export default {
   content: [
     "./index.html",
@@ -6,11 +9,37 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      sans: ["Nunito", "Raleway", "sans-serif"]
+    colors: {
+      amber: colors.amber,
+      sky: colors.sky,
+      green: colors.green,
+      stone: colors.stone,
     },
-    extend: {},
+    fontFamily: {
+      serif: ["Raleway", "serif"],
+      sans: ["Nunito", "sans-serif"],
+    },
+    extend: {
+      animation: {
+        "fade-to-left": "fade-to-left 750ms ease-out forwards"
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ matchUtilities, theme }) => {
+      matchUtilities(
+        {
+          "animate-delay": (value) => {
+            return {
+              "animation-delay": value,
+            };
+          },
+        },
+        {
+          values: theme("transitionDelay"),
+        }
+      );
+    }),
+  ],
 }
 

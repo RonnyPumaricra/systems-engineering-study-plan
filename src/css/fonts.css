@@ -2,5 +2,50 @@
   font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
-  src: local("Raleway"), url("") format("");
+  src: local("Raleway"),
+    url("/fonts/Raleway/Raleway-wght.ttf") format("truetype") tech(variations),
+    url("/fonts/Raleway/Raleway-wght.ttf") format("truetype-variations");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Raleway Bold"),
+    url("/fonts/Raleway/Raleway-wght.ttf") format("truetype") tech(variations),
+    url("/fonts/Raleway/Raleway-wght.ttf") format("truetype-variations");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Raleway Black"),
+    url("/fonts/Raleway/Raleway-wght.ttf") format("truetype") tech(variations),
+    url("/fonts/Raleway/Raleway-wght.ttf") format("truetype-variations");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Raleway Italic"),
+    url("/fonts/Raleway/Raleway-italic-wght.ttf") format("truetype")
+      tech(variations),
+    url("/fonts/Raleway/Raleway-italic-wght.ttf") format("truetype-variations");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Nunito/Nunito-wght.ttf") format("truetype") tech(variations),
+    url("/fonts/Nunito/Nunito-wght.ttf") format("truetype-variations");
+}
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Nunito/Nunito-wght.ttf") format("truetype") tech(variations),
+    url("/fonts/Nunito/Nunito-wght.ttf") format("truetype-variations");
 }
