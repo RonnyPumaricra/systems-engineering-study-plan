@@ -11,10 +11,6 @@ export function MainScreen() {
         <RadioWrapper color="amber-500">Estudios Generales</RadioWrapper>
         <RadioWrapper color="sky-500">Ciencias Básicas</RadioWrapper>
         <RadioWrapper color="green-600">Ingeniería de Sistemas</RadioWrapper>
-        {/* 
-        <RadioWrapper color="yellow">Estudios Generales</RadioWrapper>
-        <RadioWrapper color="blue">Ciencias Básicas</RadioWrapper>
-        <RadioWrapper color="green">Ingeniería de Sistemas</RadioWrapper> */}
       </div>
     </div>
   )
