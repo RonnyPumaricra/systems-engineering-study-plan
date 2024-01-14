@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 
 /** @type {{stroke: string, light: string, primary: string}[]} */
@@ -25,16 +26,14 @@ const courseColors = {
  * @returns 
  */
 
-export function Course({data, state}) {
-
-
+export function Course({data, state, handleClick, isSelected, className}) {
 
   let bgColor, strokeColor;
   let colorset = courseColors[data.id.slice(0,2)]
 
-  if (state == undefined) {
-    bgColor = ""
-    strokeColor = ""
+  if (isSelected) {
+    strokeColor = colorset.primary
+    bgColor = colorset.primary
   } else if (state == "grayed") {
     bgColor = "bg-stone-50"
     strokeColor = "bg-stone-400"
@@ -44,7 +43,10 @@ export function Course({data, state}) {
   } else if (state == "highlighted") {
     bgColor = colorset.light
     strokeColor = colorset.stroke
-  }
+  } else {
+    bgColor = ""
+    strokeColor = ""
+  } 
   
   if (data.type == "E") {
     strokeColor = "bg-stone-400"
@@ -52,7 +54,7 @@ export function Course({data, state}) {
   }
 
   return (
-    <li className={`text-2xl p-4 relative ${bgColor}`}>
+    <li className={`text-2xl p-4 relative ${bgColor} ${className}`} onClick={() => handleClick()}>
       {data.name}
       <div className={`absolute w-2 inset-y-0 left-0 ${strokeColor}`}></div>
       <div className={`absolute w-2 inset-y-0 right-0 ${strokeColor}`}></div>

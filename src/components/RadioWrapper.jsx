@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-export function RadioWrapper({color, name, children}) {
+export function RadioWrapper({color, name, children, onSelect}) {
   const [isChecked, setIsChecked] = useState(false)
 
   let textColor = isChecked ? "text-stone-900" : "text-stone-500"
@@ -17,7 +17,10 @@ export function RadioWrapper({color, name, children}) {
         type="checkbox"
         className="hidden"
         name={name}
-        onChange={ev => setIsChecked(ev.target.checked)}
+        onChange={ev => {
+          setIsChecked(ev.target.checked)
+          onSelect()
+        }}
       />
       <div
         className={
