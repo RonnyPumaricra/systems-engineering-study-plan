@@ -15,11 +15,23 @@ export function StudyPlan({selectedCategories}) {
       <div
         className={
           `flex flex-row gap-x-32
+          max-md:px-4 max-md:gap-x-8
+          max-md:pt-4 max-md:mt-6
+          max-2xl:px-8 max-2xl:gap-x-16
+          
           pt-8 px-20 mt-12 w-max`}
       >
         {studyPlanData.map((el, i) => (
           <nav key={i}>
-            <h3 className="font-bold text-[2rem] min-w-[432px] max-w-[432px] px-4">{el.name}</h3>
+            <h3 className={
+              `font-bold text-[2rem]
+              max-md:text-lg
+              max-md:px-2
+              max-2xl:text-2xl
+              max-2xl:min-w-[382px] max-2xl:max-w-[382px]
+              min-w-[432px] max-w-[432px]
+              px-4 mb-3`}
+            >{el.name}</h3>
             <ul>
               {el.courses.map((course, ii) => {
                 if (course.type == "E") return null
@@ -46,7 +58,10 @@ export function StudyPlan({selectedCategories}) {
                 
                 return (
                   <Course
-                    className="min-w-[432px] max-w-[432px] truncate"
+                    className={
+                      `min-w-[432px] max-w-[432px]
+                      max-2xl:min-w-[382px] max-2xl:max-w-[382px]
+                      truncate`}
                     key={ii}
                     data={course}
                     state={courseState}

@@ -1,6 +1,3 @@
-import { useState } from "react";
-
-
 /** @type {{stroke: string, light: string, primary: string}[]} */
 const courseColors = {
   "EG": {
@@ -54,10 +51,16 @@ export function Course({data, state, handleClick, isSelected, className}) {
   }
 
   return (
-    <li className={`text-2xl p-4 relative ${bgColor} ${className}`} onClick={() => handleClick()}>
+    <li
+      className={
+        `text-2xl max-2xl:text-xl max-md:text-base
+        p-4 max-md:p-2 relative ${bgColor} ${className}`
+      }
+      onClick={() => handleClick()}
+    >
       {data.name}
-      <div className={`absolute w-2 inset-y-0 left-0 ${strokeColor}`}></div>
-      <div className={`absolute w-2 inset-y-0 right-0 ${strokeColor}`}></div>
+      <div className={`absolute w-1 inset-y-0 left-0 ${strokeColor}`}></div>
+      <div className={`absolute w-1 inset-y-0 right-0 ${strokeColor}`}></div>
     </li>
   )
 }

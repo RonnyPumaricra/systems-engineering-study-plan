@@ -42,6 +42,16 @@
   src: url("/fonts/Nunito/Nunito-wght.ttf") format("truetype") tech(variations),
     url("/fonts/Nunito/Nunito-wght.ttf") format("truetype-variations");
 }
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/Nunito/Nunito-wght.ttf") format("truetype") tech(variations),
+    url("/fonts/Nunito/Nunito-wght.ttf") format("truetype-variations");
+}
+
+
 @font-face {
   font-family: "Nunito";
   font-style: normal;

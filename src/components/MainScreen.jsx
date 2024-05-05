@@ -18,11 +18,14 @@ export function MainScreen() {
 
   return (
     <div className="relative">
-      <div className="px-24 pt-20">
-        <h2 className="text-[2.5rem] font-serif font-bold mb-10">
+      <div className={
+        `max-md:px-6 max-md:pt-6
+        max-2xl:px-12 max-2xl:pt-12
+        px-24 pt-20`}>
+        <h2 className="max-md:text-[1.75rem] max-2xl:text-[2rem] text-[2.5rem] font-serif font-bold max-md:mb-6 mb-10">
           Plan de Estudios | Ingeniería de Sistemas
         </h2>
-        <div className="flex flex-row gap-16">
+        <div className="flex max-md:flex-col flex-row flex-wrap max-md:gap-6 gap-12">
           <RadioWrapper
             color="amber-500"
             onSelect={() => setSelectedCategories(flipCategory("EG", selectedCategories))}
